@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 206, 206);
+}
+
+.container {
+  /* border: solid black 2px; */
+  margin: 1% 0;
+  overflow: hidden;
+  height: 550px;
+}
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* make a bouncing ball  */
+
+.ball {
+  /* add animation  */
+  animation-name: bounceW;
+  animation-duration: 2.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.ball div {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #db4242;
+  margin-bottom: 15px;
+  transform: translateY(450px);
+
+  /* 
+    animation: bounceH 1s ease-in 0s infinite direction fill-mode; */
+}
+
+.ball div {
+  animation-name: bounceH;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.shadow {
+  height: 15px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-top: -65px;
+  /* add animation  */
+  animation-name: shadow;
+  animation-duration: 2.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes bounceW {
+  0% {
+    transform: translateX(0px);
+    width: 90px;
+  }
+  100% {
+    transform: translateX(calc(100vw - 10vmin));
+    width: 90px;
+  }
+}
+
+@keyframes bounceH {
+  0% {
+    height: 110px;
+    width: 90px;
+    transform: translateY(0px);
+  }
+  100% {
+    height: 80px;
+    width: 110px;
+    transform: translateY(470px);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    width: 90px;
+    transform: translateX(0px);
+    box-shadow: 0 50px 20px #1f1f1f;
+  }
+  25% {
+    width: 110px;
+    box-shadow: 0 50px 10px #1f1f1f;
+  }
+  50% {
+    width: 90px;
+    box-shadow: 0 50px 20px #1f1f1f;
+  }
+  75% {
+    width: 110px;
+    box-shadow: 0 50px 10px #1f1f1f;
+  }
+  100% {
+    width: 90px;
+    transform: translateX(calc(100vw - 10vmin));
+    box-shadow: 0 50px 20px #1f1f1f;
+  }
+}
